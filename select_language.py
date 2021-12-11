@@ -7,11 +7,11 @@ from selenium.webdriver.chrome.service import Service
 class LanguageOptions(unittest.TestCase):
 
     def setUp(self):
-        self.driver = webdriver.Chrome(service = Service('./chromedriver.exe'))
-        driver = self.driver
-        driver.maximize_window()
+        self.driver = webdriver.Chrome(service = Service('./chromedriver.exe')) # Acces the driver
+        driver = self.driver # Shortener
+        driver.maximize_window() 
         driver.get('http://demo-store.seleniumacademy.com/')
-        driver.implicitly_wait(30)
+        driver.implicitly_wait(30) # Wait 30 seconds to observe
 
     def test_select_language(self):
         exp_options = ['English', 'French', 'German']
@@ -19,11 +19,11 @@ class LanguageOptions(unittest.TestCase):
         
         select_language = Select(self.driver.find_element(By.ID, 'select-language'))
 
-        self.assertEqual(3, len(select_language.options))
-        for option in select_language.options:
-            act_options.append(option.text)
+        self.assertEqual(3, len(select_language.options)) # Assert that there are just 3 lang options
+        for option in select_language.options: 
+            act_options.append(option.text) # Put all the options ina list
 
-        self.assertListEqual(exp_options, act_options)
+        self.assertListEqual(exp_options, act_options) 
 
         self.assertEqual('English', select_language.first_selected_option.text)
 
