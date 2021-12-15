@@ -2,7 +2,7 @@ import unittest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
-from time import sleep
+
 
 class Typos(unittest.TestCase):
 
@@ -37,6 +37,7 @@ class Typos(unittest.TestCase):
 
     def tearDown(self):
         self.driver.quit()
+
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
