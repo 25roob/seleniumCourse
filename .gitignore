@@ -2,3 +2,4 @@
 /reports
 *.exe
 /__pycache__
+/pom/__pycache__
