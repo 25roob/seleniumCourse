@@ -45,7 +45,6 @@ class MercadoLibre(unittest.TestCase):
         driver.implicitly_wait(3)
 
         table_data = [[] for _ in range(5)]
-        row_data = []
         for i in range(5):
             name_product = driver.find_element(By.XPATH, f'//*[@id="root-app"]/div/div/section/ol/li[{i+1}]/div/div/div[2]/div[1]/a/h2')
             table_data[i].append(name_product.text)
