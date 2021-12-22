@@ -1,5 +1,11 @@
 /venv
 /reports
 *.exe
+*.pyc
 /__pycache__
 /pom/__pycache__
+/projectMercadoBot/reports
+/projectMercadoBot/__pycache__
+
+ 
+
