@@ -26,10 +26,16 @@ class MercadoTest(unittest.TestCase):
         mercado.click_submit()
         self.assertEqual('ropa de bebé', mercado.word_searched)
 
-        mercado.close_coockiedisclaimer()
+        # mercado.close_coockiedisclaimer()
 
         mercado.see_all_locations()
         mercado.select_location_guerrero()
+
+        mercado.select_condition_nuevo()
+
+        self.driver.implicitly_wait(10)
+
+        
 
     @classmethod
     def tearDownClass(cls):

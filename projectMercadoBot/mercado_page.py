@@ -42,15 +42,26 @@ class MercadoPage(object):
         country_button.click()
 
     def see_all_locations(self):
+        self._driver.find_element(By.ID, 'newCookieDisclaimerButton').click()
         see_all = self._driver.find_element(By.XPATH, '//*[@id="root-app"]/div/div[1]/aside/section/div[11]/ul/li[10]/a')
         see_all.click()
 
-    def close_coockiedisclaimer(self):
-        self._driver.find_element(By.ID, 'newCookieDisclaimerButton').click()
+    # def close_coockiedisclaimer(self):
+    #     self._driver.find_element(By.ID, 'newCookieDisclaimerButton').click()
 
     def select_location_guerrero(self):
-        WebDriverWait(self._driver, 30).until(EC.element_to_be_clickable((By.XPATH, '/html/body/div[6]/div[3]/div/div/div/div[2]/div[2]/div[2]/div[6]/div[2]/a[2]')))
-        select_location = self._driver.find_element(By.XPATH, '/html/body/div[6]/div[3]/div/div/div/div[2]/div[2]/div[2]/div[6]/div[2]/a[2]')
+        WebDriverWait(self._driver, 30).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="modal"]/div[2]/a[13]')))
+        select_location = self._driver.find_element(By.XPATH, '//*[@id="modal"]/div[2]/a[13]')
         select_location.click()
 
     # TODO: make one method 'select_location_(location)' for every state using XPATH
+
+    def select_condition_nuevo(self):
+        WebDriverWait(self._driver, 10).until(EC.element_to_be_clickable((By.XPATH, '/html/body/main/div/div[1]/aside/section/div[6]/ul/li[1]/a')))
+        condition_button = self._driver.find_element(By.XPATH, '/html/body/main/div/div[1]/aside/section/div[6]/ul/li[1]/a')
+        condition_button.click()
+
+    # TODO: make a method simmilar to the one above for used condition
+
+    def scrape_results(self):
+        pass
